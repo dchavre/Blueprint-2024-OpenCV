@@ -1,0 +1,18 @@
+file_name = 'download.jpeg'
+labels = {}
+
+img = cv2.imread(file_name, cv2.IMREAD_COLOR)
+bbox, label, conf = cv.detect_common_objects(img)
+output_image = draw_bbox(img, bbox, label, conf)
+
+cv2.imshow('Video', output_image)
+
+for item in label:
+    if item in labels:
+        labels[item] += 1
+    else: 
+        labels[item] = 1
+
+print(labels)
+
+garbage = sum(labels.values())
