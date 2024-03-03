@@ -4,4 +4,4 @@ from .models import TrashPost
 class TrashPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrashPost
-        fields = ('author', 'image', 'location', 'created_at')
+        fields = ('author', 'image', 'location', 'post_id', 'created_at')
